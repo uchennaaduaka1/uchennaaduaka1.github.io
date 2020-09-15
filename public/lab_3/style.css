@@ -7,7 +7,7 @@ html, body {
 
 html {
   font-size: 10px;
-
+  
 }
 
 body {
@@ -20,12 +20,12 @@ body {
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Ranchers', cursive;
   color: #2a2a2a;
 }
 
 p, input, li {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Ranchers', sans-serif;
   color: #2a2a2a;
 }
 
@@ -33,11 +33,11 @@ h1 {
   font-size: 4rem;
   text-align: center;
   text-shadow: 2px 2px 10px black;
-  font-weight: 100;
+  font-weight: 200;
 }
 
 h2 {
-  font-size: 5rem;
+  font-size: 3rem;
   text-align: center;
   font-weight: 800;
 }
@@ -60,7 +60,7 @@ p, li {
 }
 
 body > * {
-  background-color: red;
+  background-color: rgba(0,255,0,0.5);
   padding: 1%;
 }
 
@@ -74,7 +74,7 @@ h1 {
   text-transform: uppercase;
 }
 
-header img {
+.header img {
   display: block;
   height: 60px;
   padding-top: 20.15px;
@@ -121,19 +121,19 @@ nav a, nav span {
 }
 
 .aside {
-  display: flex;
-  flex-flow: row wrap;
-  flex: 2;
+  flex: 1;
+  margin-left: 10px;
+  padding: 1%;
 }
 
 .aside a {
-  display: flex;
-  flex-basis: 50%;
+  display: block;
+  float: left;
+  width: 50%;
 }
 
 .aside img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
 }
 
 .footer {
