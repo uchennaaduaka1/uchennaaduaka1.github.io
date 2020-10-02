@@ -2,7 +2,7 @@
 .header{
     width: 500px;
     height: 200px;
-    border: 2px solid rgb(245, 220, 225);
+    border: 2px solid blueviolet;
     background-color: blueviolet;
     padding: 4px 6px;
     font: 16px "Lucida Grande", "Helvetica", "Arial", "sans-serif"
