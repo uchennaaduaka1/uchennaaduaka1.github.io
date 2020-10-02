@@ -1,0 +1,15 @@
+.main-image{
+    flex-flow: column wrap;
+    margin-right: 10px;
+}
+
+.main-image p{
+    background-color: beige;
+    padding: 15px;
+    max-width: 290px;
+}
+
+.main-info{
+    background-color: beige;
+    padding: 15px;
+}
