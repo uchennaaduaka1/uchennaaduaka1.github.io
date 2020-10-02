@@ -5,6 +5,14 @@ body{
     padding: 50px 0;
 }
 
+#header{
+    width: 500px;
+    height: 200px;
+    border: 2px solid rgb(245, 220, 225);
+    padding: 4px 6px;
+    font: 16px "Lucida Grande", "Helvetica", "Arial", "sans-serif"
+}
+
 .main-image{
     flex-flow: column wrap;
     margin-right: 10px;
