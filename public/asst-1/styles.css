@@ -43,6 +43,9 @@ p, li {
     flex-flow: row wrap;
     padding: 15px;
 
+.wrapper{
+    margin-right:15px ;
+    flex: 0 1 auto;
 }
 
 .container {
@@ -102,6 +105,12 @@ img.image {
     padding: 15px;
     width: 40%
     max-width: 100%;
+}
+
+.two{
+    background-color: goldenrod;
+    padding: 15px;
+    max-width: 290px;
 }
 
 .main-info{
