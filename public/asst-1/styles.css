@@ -46,15 +46,20 @@ p, li {
 }
 
 .container {
+    max-width: 1000px;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    justify-content: space-between;
-    } else .container {justify-content: center;
-    }       
+    justify-content: space-between;}
+        else .container {justify-content:center;
+}
 
-.container {
+.wrapper.container {
     margin-right:15px ;
+}
+
+.one {
     flex: 1 0 auto;
 }
 
