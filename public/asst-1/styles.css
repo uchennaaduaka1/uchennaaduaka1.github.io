@@ -57,6 +57,7 @@ p, li {
 
 .wrapper.container {
     margin-right:15px ;
+    flex: 0 1 auto;
 }
 
 .one {
@@ -75,6 +76,18 @@ h2 {
     font-size: 3rem;
     text-align: center;
     font-weight: 800;
+}
+
+.imgbox {
+    margin-right: 15px;
+}
+
+img.image {
+    width: 40%;
+    max-width: 100%;
+    border-radius: 4px ;
+    border-width: 1px;
+    border-style: solid;
 }
 
 .header img {
