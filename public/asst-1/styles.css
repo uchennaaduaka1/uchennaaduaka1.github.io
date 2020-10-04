@@ -45,11 +45,6 @@ h2{
 .wrapper{
     margin-right:15px ;
     flex: 0 1 auto;
-    margin: 0 auto;
-    max-width: 960px;
-    flex-wrap: wrap;
-    display: flex;
-    flex-flow: row wrap;
 }
 
 .container {
@@ -85,6 +80,12 @@ h2{
 }
 
 .imgbox p{
+    background-color: goldenrod;
+    padding: 15px;
+    max-width: 290px;
+}
+
+.two{
     background-color: goldenrod;
     padding: 15px;
     max-width: 290px;
