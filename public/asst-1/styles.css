@@ -3,7 +3,7 @@ html, body {
     padding: 0;
   }
   
- html {
+html {
     font-size: 10px;
 }
   
@@ -50,38 +50,10 @@ h2{
     flex-wrap: wrap;
     display: flex;
     flex-flow: row wrap;
-    width: 70%;
-    min-width: 800px;
+}
+
+.container{
     margin: 0 auto;
-    background-color: beige;
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-h1, h2{
-    font-family: 'Ranchers';
-    color: orange;
-}
-
-p, input, li {
-    font-family: 'Ranchers', sans-serif;
-    color: #2a2a2a;
-}
-
-p, li {
-    font-size: 1.6rem;
-    line-height: 1.5;
-}
-
-h1 {
-    flex: 5;
-    text-transform: uppercase;
-  }
-
-.header {
     margin-bottom: 10px;
     max-width: 960px;
     align-content: center;
@@ -91,19 +63,14 @@ h1 {
     justify-content: space-between;
     margin-right: 15px;
     flex: 1 0 auto;
-
-    display: flex;
-    flex-flow: row wrap;
 }
 
-h1 {
-    font-size: 4rem;
-    text-align: center;
-    text-shadow: 2px 2px 10px red;
-    font-weight: 200;
+.imgbox img{
+    border: 1px solid #1B06D1;
+    border-radius: 4px;
 }
 
-.image {
+.image{
     flex-flow: column wrap;
     flex: 1 0 auto;
     margin-right: 15px;
@@ -127,39 +94,21 @@ h1 {
 .imgbox p{
     background-color: goldenrod;
     padding: 15px;
-    max-width: 290px;
+    max-width: 320px;
+}
+
+.container{
+    max-width: 100%;
 }
 
 .two{
     background-color: goldenrod;
     padding: 15px;
-    max-width: 320px;
-  
-h2 {
-    font-size: 3rem;
-    text-align: center;
-    font-weight: 800;
-}
-
-.header img {
-    display: block;
-    height: 60px;
-    padding-top: 20.15px;
-  }
-
-.main-image{
-    flex-flow: column wrap;
-    margin-right: 10px;
-}
-
-.main-image p{
-    background-color: beige;
-    padding: 15px;
-    max-width: 290px;
+    max-width: 290;
 }
 
 .main-info{
-    background-color: beige;
+    background: beige;
     padding: 15px;
 }
 
