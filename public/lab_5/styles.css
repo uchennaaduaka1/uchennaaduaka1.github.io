@@ -1,0 +1,76 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: normal 18px/1.5 "Fira Sans", "Helvetica Neue", sans-serif;
+    background: #3BBFBA;
+    color: black;
+    padding: 50px 0;
+}
+  
+.container {
+    width: 70%;
+    min-width: 800px;
+    margin: 0 auto;
+}
+  
+.container * {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 5px;
+    text-align: center;
+    color: white;
+}
+
+.flex-outer,
+.flex-inner {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.flex-outer {
+    padding: 0px 16px;
+    max-width: 800px;
+    margin-left: 0px;
+}
+  
+.flex-outer li, .flex-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+  
+.flex-outer li {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+  
+.flex-outer>li>label, .flex-outer li p {
+    flex: 1 0 125px;
+    max-width: 225px;
+    padding: 8px;
+}
+  
+.flex-outer > li > label + *, .flex-inner {
+    flex: 1 0 225px;
+    justify-content: space-between;
+}
+  
+.flex-outer li button {
+    padding: 6px 12px;
+    border: none;
+    background: grey;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 3px;
+    letter-spacing: 1.2px;
+    margin-right: 10px;
+}
+
+.flex-inner li {
+    width: 95px;
+}
