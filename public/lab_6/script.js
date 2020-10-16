@@ -33,7 +33,7 @@ document.body.addEventListener('submit', async (e) => {
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
       const arr = range(10);
-      const randomCountries = arr.map((i) => {
+      const randomCountries = arr.map(() => {
         const indexyArray = []
         const lenOfList = fromServer.length;
         const randomCountryIndex = getRandomInt(lenOfList);
