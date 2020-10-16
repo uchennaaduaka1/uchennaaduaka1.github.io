@@ -1,4 +1,7 @@
 // You may wish to find an effective randomizer function on MDN.
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
 
 function range(int) {
   const arr = [];
@@ -29,8 +32,27 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      // You're going to do your lab work in here. Replace this comment.
-      console.log('fromServer', fromServer);
+      const arr = range(10);
+      const randomCountries = arr.map((i) => {
+        const indexyArray = []
+        const lenOfList = fromServer.length;
+        const randomCountryIndex = getRandomInt(lenOfList);
+        indexyArray.push(randomCountryIndex)
+        if(randomCountryIndex !== indexyArray){
+          const country = fromServer[randomCountryIndex];
+          return country;
+        }
+      }
+    });
+    
+    const sortedCountries = randomCountries.sort((a,b) => sortFunction(b,a,'name'));
+
+    $('.flex-outer form .flex-inner').remove();
+    $('.flex-outer form').prepend("<ol class='flex-inner'></ol>");
+
+      const listContent = sortedCountries.map((country) => `<li> <input type="checkbox" id="${country.name}" name="name" value="${country.code}">`
+        + `<label for="country.name">${country.name}</label></li>`);
+      $('.flex-inner').append(listContent);
     })
     .catch((err) => console.log(err));
-});
+  });
