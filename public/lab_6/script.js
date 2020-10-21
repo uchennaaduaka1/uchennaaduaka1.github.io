@@ -1,8 +1,5 @@
+/* eslint-disable no-console */
 // You may wish to find an effective randomizer function on MDN.
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
 function range(int) {
   const arr = [];
   for (let i = 0; i < int; i += 1) {
@@ -20,6 +17,12 @@ function sortFunction(a, b, key) {
   return 0;
 }
 
+function getRandomInt(min, max) {
+  this.min = Math.ceil(min);
+  this.max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 document.body.addEventListener('submit', async (e) => {
   e.preventDefault(); // this stops whatever the browser wanted to do itself.
   const form = $(e.target).serializeArray(); // here we're using jQuery to serialize the form
@@ -32,27 +35,28 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      const arr = range(10);
-      const randomCountries = arr.map(() => {
-        const indexyArray = []
-        const lenOfList = fromServer.length;
-        const randomCountryIndex = getRandomInt(lenOfList);
-        indexyArray.push(randomCountryIndex)
-        if(randomCountryIndex !== indexyArray){
-          const country = fromServer[randomCountryIndex];
-          return country;
-        }
+      console.log('fromServer', fromServer);
+      if (document.querySelector('.flex-inner')) {
+        document.querySelector('.flex-inner').remove();
       }
-    });
-    
-    const sortedCountries = randomCountries.sort((a,b) => sortFunction(b,a,'name'));
+      const arr1 = range(10);
+      const arr2 = arr1.map(() => {
+        const number = getRandomInt(0, 243);
+        return fromServer[number];
+      });
+      console.log(arr2);
 
-    $('.flex-outer form .flex-inner').remove();
-    $('.flex-outer form').prepend("<ol class='flex-inner'></ol>");
+      const reverseList = arr2.sort((a, b) => sortFunction(b, a, 'name'));
+      const ol = document.createElement('ol');
+      ol.className = 'flex-inner';
+      $('form').prepend(ol);
 
-      const listContent = sortedCountries.map((country) => `<li> <input type="checkbox" id="${country.name}" name="name" value="${country.code}">`
-        + `<label for="country.name">${country.name}</label></li>`);
-      $('.flex-inner').append(listContent);
+      reverseList.forEach((el, i) => {
+        const li = document.createElement('li');
+        $(li).append(`<input type="checkbox" value=${el.code} id=${el.code}/>`);
+        $(li).append(`<label for=${el.code}>${el.name}</label>`);
+        $(ol).append(li);
+      });
     })
     .catch((err) => console.log(err));
-  });
+});
