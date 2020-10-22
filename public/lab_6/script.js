@@ -1,5 +1,6 @@
-/* eslint-disable no-console */
+
 // You may wish to find an effective randomizer function on MDN.
+
 function range(int) {
   const arr = [];
   for (let i = 0; i < int; i += 1) {
@@ -17,7 +18,7 @@ function sortFunction(a, b, key) {
   return 0;
 }
 
-function getRandomInt(min, max) {
+function getRandomIntInclusive(min, max) {
   this.min = Math.ceil(min);
   this.max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
@@ -39,9 +40,10 @@ document.body.addEventListener('submit', async (e) => {
       if (document.querySelector('.flex-inner')) {
         document.querySelector('.flex-inner').remove();
       }
+      
       const arr1 = range(10);
       const arr2 = arr1.map(() => {
-        const number = getRandomInt(0, 243);
+        const number = getRandomIntInclusive(0, 243);
         return fromServer[number];
       });
       console.log(arr2);
