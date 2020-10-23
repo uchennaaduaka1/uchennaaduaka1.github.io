@@ -8,10 +8,10 @@ function range(int) {
   return arr;
 }
 
-function sortFunction(a, b, key) {
-  if (a[key] < b[key]) {
+function sortFunction(x, y, key) {
+  if (x[key] < y[key]) {
     return -1;
-  } if (a[key] > b[key]) {
+  } if (x[key] > y[key]) {
     return 1;
   }
   return 0;
