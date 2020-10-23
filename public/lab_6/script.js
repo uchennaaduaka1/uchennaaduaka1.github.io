@@ -39,12 +39,12 @@ document.body.addEventListener('submit', async (e) => {
       if (document.querySelector('.flex-inner')) {
         document.querySelector('.flex-inner').remove();
       };
-      const arr10 = range(10); // = [1, 2, 3...];
+      const arr10 = range(10);
       const arr = arr10.map(() => {
         const number = getRandomInt(243);
         return fromServer[number];
       });
-      const reverselist = arr.sort((a, b) => sortFunction(b, a, 'name')); // sort
+      const reverselist = arr.sort((a, b) => sortFunction(b, a, 'name'));
       const ol = document.createElement('ol');
       ol.className = 'flex-inner';
       $('form').append(ol);
