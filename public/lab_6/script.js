@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 // You may wish to find an effective randomizer function on MDN.
 
 function range(int) {
@@ -26,8 +25,8 @@ function map(s1, s2) {
 }
 
 document.body.addEventListener('submit', async (e) => {
-  e.preventDefault(); // this stops whatever the browser wanted to do itself.
-  const form = $(e.target).serializeArray(); // here we're using jQuery to serialize the form
+  e.preventDefault();
+  const form = $(e.target).serializeArray();
   fetch('/api', {
     method: 'POST',
     headers: {
