@@ -1,4 +1,4 @@
-// You may wish to find an effective randomizer function on MDN.
+
 
 function range(int) {
   const arr = [];
