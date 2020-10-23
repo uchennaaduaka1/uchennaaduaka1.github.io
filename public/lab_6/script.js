@@ -1,3 +1,4 @@
+/* eslint-disable no-template-curly-in-string */
 // You may wish to find an effective randomizer function on MDN.
 
 function range(int) {
@@ -8,7 +9,8 @@ function range(int) {
   return arr;
 }
 
-function sortList(a,b,key) {
+// sortFucntion(b, a) <- decending sort
+function sortFunction(a, b, key) {
   if (a[key] < b[key]) {
     return -1;
   } if (a[key] > b[key]) {
@@ -20,8 +22,7 @@ function sortList(a,b,key) {
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
-
-function mapList(s1, s2) {
+function map(s1, s2) {
   return (`${s1} ${s2}`);
 }
 
@@ -39,13 +40,13 @@ document.body.addEventListener('submit', async (e) => {
     .then((fromServer) => {
       if (document.querySelector('.flex-inner')) {
         document.querySelector('.flex-inner').remove();
-      }
+      };
       const arr10 = range(10); // = [1, 2, 3...];
-      const arr = arr10.mapList(() => {
+      const arr = arr10.map(() => {
         const number = getRandomInt(243);
         return fromServer[number];
       });
-      const reverselist = arr.sort((a, b) => sortList(b, a, 'name')); // sort
+      const reverselist = arr.sort((a, b) => sortFunction(b, a, 'name')); // sort
       const ol = document.createElement('ol');
       ol.className = 'flex-inner';
       $('form').append(ol);
@@ -54,7 +55,6 @@ document.body.addEventListener('submit', async (e) => {
         const li = document.createElement('li');
         $(li).append(`<input type = "checkbox" value =${element.code} id = ${element.code} />`)
         $(li).append(`<label for = ${element.code}> ${element.name}</label>`)
-        
         $(ol).append(li);
       });
       console.log(arr);
