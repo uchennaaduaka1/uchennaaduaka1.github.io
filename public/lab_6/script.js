@@ -9,7 +9,6 @@ function range(int) {
   return arr;
 }
 
-// sortFucntion(b, a) <- decending sort
 function sortFunction(a, b, key) {
   if (a[key] < b[key]) {
     return -1;
