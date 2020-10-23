@@ -1,4 +1,3 @@
-
 // You may wish to find an effective randomizer function on MDN.
 
 function range(int) {
@@ -9,7 +8,7 @@ function range(int) {
   return arr;
 }
 
-function sortFunction(a, b, key) {
+function sortList(a,b,key) {
   if (a[key] < b[key]) {
     return -1;
   } if (a[key] > b[key]) {
@@ -18,10 +17,12 @@ function sortFunction(a, b, key) {
   return 0;
 }
 
-function getRandomIntInclusive(min, max) {
-  this.min = Math.ceil(min);
-  this.max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min);
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+function mapList(s1, s2) {
+  return (`${s1} ${s2}`);
 }
 
 document.body.addEventListener('submit', async (e) => {
@@ -36,29 +37,28 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      console.log('fromServer', fromServer);
       if (document.querySelector('.flex-inner')) {
         document.querySelector('.flex-inner').remove();
       }
-      
-      const arr1 = range(10);
-      const arr2 = arr1.map(() => {
-        const number = getRandomIntInclusive(0, 243);
+      const arr10 = range(10); // = [1, 2, 3...];
+      const arr = arr10.mapList(() => {
+        const number = getRandomInt(243);
         return fromServer[number];
       });
-      console.log(arr2);
-
-      const reverseList = arr2.sort((a, b) => sortFunction(b, a, 'name'));
+      const reverselist = arr.sort((a, b) => sortList(b, a, 'name')); // sort
       const ol = document.createElement('ol');
       ol.className = 'flex-inner';
-      $('form').prepend(ol);
+      $('form').append(ol);
 
-      reverseList.forEach((el, i) => {
+      reverselist.forEach((element, i) => {
         const li = document.createElement('li');
-        $(li).append(`<input type="checkbox" value=${el.code} id=${el.code}/>`);
-        $(li).append(`<label for=${el.code}>${el.name}</label>`);
+        $(li).append(`<input type = "checkbox" value =${element.code} id = ${element.code} />`)
+        $(li).append(`<label for = ${element.code}> ${element.name}</label>`)
+        
         $(ol).append(li);
       });
+      console.log(arr);
+      console.log('Test');
     })
     .catch((err) => console.log(err));
 });
