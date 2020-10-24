@@ -36,7 +36,7 @@ document.body.addEventListener('submit', async (e) => {
     .then((fromServer) => {
       if (document.querySelector('.flex-inner')) {
         document.querySelector('.flex-inner').remove();
-      };
+      }
       const arr10 = range(10);
       const arr = arr10.map(() => {
         const number = getRandomInt(243);
@@ -49,8 +49,8 @@ document.body.addEventListener('submit', async (e) => {
 
       reverselist.forEach((element, i) => {
         const li = document.createElement('li');
-        $(li).append(`<input type = "checkbox" value =${element.code} id = ${element.code} />`)
-        $(li).append(`<label for = ${element.code}> ${element.name}</label>`)
+        $(li).append(`<input type = "checkbox" value =${element.code} id = ${element.code} />`);
+        $(li).append(`<label for = ${element.code}> ${element.name}</label>`);
         $(ol).append(li);
       });
       console.log(arr);
