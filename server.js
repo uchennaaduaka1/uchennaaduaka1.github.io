@@ -1,10 +1,10 @@
 // These are our required libraries to make the server work.
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
+import fetch from 'node-fetch';
 import express from 'express';
 import dotenv from 'dotenv';
 import countries from './public/lab_6/countries.js';
-import fetch from 'node-fetch';
 
 dotenv.config();
 
@@ -26,14 +26,11 @@ app.route('/api')
     console.log('GET request detected');
     res.send(`Lab 5 for ${process.env.NAME}`);
   })
-  .post((req, res) => {
+  .post(async(req, res) => {
+    console.log('POST request detected');
     const data = await fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json');
     const json = await data.json();
-    res.json(json);
-    console.log('POST request detected');
-    console.log('Form data in res.body', req.body);
-
-    res.json(countries);
+    console.log('fetch request data', json);
   });
 
 app.listen(port, () => {
